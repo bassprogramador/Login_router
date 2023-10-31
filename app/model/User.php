@@ -22,20 +22,26 @@
       //QUERY - CONSULTAR SE O USÚARIO TEM PERMISSÃO DE ACESSO
         public function getUsuario($email, $senha)
         {
-          $conect = $this->banco();
+          $conect = $this->banco(); //chamei o método banco da classe Conexão
           $query_sql = "SELECT * FROM usuario WHERE email = :email LIMIT 1";
           $stmt = $conect->prepare($query_sql);
           $stmt->bindParam(':email' , $email);
           $stmt->execute();
 
-            if($stmt->rowCount() === 1)
+            if($stmt->rowCount() === 1) //Se número de linhas for idêntico a 1
             { 
-                $usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
+                //fetch -> Retorna um array associativo de uma única linha de registro 
+                $usuario = $stmt->fetch(\PDO::FETCH_ASSOC); 
                   
-                //VERIFICANDO SE SENHA DE LOGIN É IGUAL A SENHA CADASTRADA NO BANDO
+                /*A função password_verify()verifica se a senha passada no primeiro parâmetro(senha de login)
+                  é igual ao hash que foi passado no segundo parâmetro(senha cadastrada no banco de dados) */
                   if(password_verify($senha, $usuario['senha']))
                   {
-                      $_SESSION['id'] = $usuario['id'];
+                    /*Se for! vou criar duas variáveis de sessão com o nome: 'id' e 'nome' 
+                      e atribuir a chave 'id' e a chave 'nome' do array fetch atribuido à variavel $usuario
+                      e essas duas variáveis vou utilizar em todo meu código */
+                      
+                      $_SESSION['id'] = $usuario['id'];          
                       $_SESSION['nome'] = $usuario['nome'];
                     
                       //REDIRECIONANDO PARA A PÁGINA DASHBOARD
