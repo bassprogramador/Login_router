@@ -7,6 +7,7 @@ class Rota{
        public $metodo;
        public $parametro = [];
 
+ QUANDO A CLASSE ROTA FOR INSTACIADA AUTOMATICAMENTE ESTE MÉTODO SERÁ EXECUTADO
     public function __construct()
     {
        // CHAMANDO O MÉTODO url   
@@ -16,7 +17,7 @@ class Rota{
           $classe = $this->getController();
           $objeto = new $classe;
        
-       // EXECUTANDO OS MÉTODOS E OS PARÂMETROS DESSE OBJETO
+       // EXECUTANDO OS MÉTODOS E OS PARÂMETROS DA CLASSE INSTANCIADA NO INDEX.PHP
           call_user_func_array(array($objeto, $this->getMetodo()), $this->parametro);
        
     }
