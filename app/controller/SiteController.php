@@ -4,20 +4,20 @@
   class SiteController
   {
    
-      //CHAMANDO A PÁGINA DE DASHBOARD
+      //CADA MÉTODO A BAIXO ESTÃO PEGANDO SUAS RESPEQUITIVAS PÁGINAS NO DIRETORIO VIEL
         public function home()
         {
-           include_once "app/view/dashboard.php";
+           include_once "app/view/dashboard.php"; //Aqui dentro está a página dashboard
         }
 
         public function sobre()
         {
-           include_once "app/view/sobre.php";
+           include_once "app/view/sobre.php"; //Aqui dentro está a página sobre
         }
 
         public function contato()
         {
-           include_once "app/view/contato.php";
+           include_once "app/view/contato.php"; //Aqui dentro está a página contato
         }
  
       //PÁGINA DE ERRO: 404
