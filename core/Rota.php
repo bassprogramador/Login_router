@@ -7,7 +7,7 @@ class Rota{
        public $metodo;
        public $parametro = [];
 
- QUANDO A CLASSE ROTA FOR INSTACIADA AUTOMATICAMENTE ESTE MÉTODO SERÁ EXECUTADO
+ QUANDO A CLASSE ROTA FOR INSTACIADA NO INDEX.PHP, AUTOMATICAMENTE ESTE MÉTODO SERÁ EXECUTADO
     public function __construct()
     {
        // CHAMANDO O MÉTODO url   
