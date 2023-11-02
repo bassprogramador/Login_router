@@ -7,17 +7,20 @@
       //CADA MÉTODO A BAIXO ESTÃO PEGANDO SUAS RESPEQUITIVAS PÁGINAS NO DIRETORIO VIEL
         public function home()
         {
-           include_once "app/view/dashboard.php"; //Aqui dentro agora está a página dashboard
+           //Agora página dashboard está dentro do método home
+             include_once "app/view/dashboard.php"; 
         }
 
         public function sobre()
         {
-           include_once "app/view/sobre.php"; //Aqui dentro agora está a página sobre
+           //Agora página sobre está dentro do método sobre
+             include_once "app/view/sobre.php"; 
         }
 
         public function contato()
         {
-           include_once "app/view/contato.php"; //Aqui dentro agora está a página contato
+          //Agora página contato está dentro do método contato
+            include_once "app/view/contato.php"; 
         }
  
       //PÁGINA DE ERRO: 404
